@@ -1,0 +1,14 @@
+{
+  "name": "webrtc-live-call",
+  "version": "1.0.0",
+  "description": "A consent-based one-to-one WebRTC video/audio calling app using Node.js and Socket.IO.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "socket.io": "^4.8.1"
+  }
+}

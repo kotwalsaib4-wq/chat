@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Live Call</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="app">
+    <section class="card">
+      <h1>📞 Live Call</h1>
+      <p class="muted">Private one-to-one audio/video call</p>
+
+      <div id="status" class="status">Connecting…</div>
+
+      <div id="receiverPanel" class="hidden">
+        <h2>Receiver</h2>
+        <p>Keep this page open to receive call requests.</p>
+        <button id="receiverStart">Enable Call Receiver</button>
+      </div>
+
+      <div id="callerPanel" class="hidden">
+        <h2>Call</h2>
+        <p>The other person must accept the call before audio/video starts.</p>
+        <button id="callButton">📞 Request Live Call</button>
+      </div>
+
+      <div id="incomingPanel" class="hidden incoming">
+        <h2>📲 Incoming call</h2>
+        <p>Someone is requesting a live audio/video call.</p>
+        <div class="row">
+          <button id="acceptButton">✅ Accept</button>
+          <button id="rejectButton" class="secondary">❌ Reject</button>
+        </div>
+      </div>
+
+      <div id="callPanel" class="hidden">
+        <div class="videos">
+          <video id="remoteVideo" autoplay playsinline></video>
+          <video id="localVideo" autoplay muted playsinline></video>
+        </div>
+        <div class="row">
+          <button id="hangupButton" class="danger">End Call</button>
+        </div>
+      </div>
+
+      <p class="notice">
+        Camera and microphone are used only after the browser asks for permission.
+        Do not share private links publicly.
+      </p>
+    </section>
+  </main>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
